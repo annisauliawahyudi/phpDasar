@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nilai terbesar</title>
+    <title>jmd</title>
 </head>
 <body>
     <form action="" method="post">
@@ -18,13 +18,11 @@
     if(isset($_POST['submit'])) {
         $d = $_POST["d"];
 
+        $jam = floor($d / 3600);
+        $sd = $d % 3600;
+        $menit = floor($sd / 60);
+        $detik = $sd % 60;
 
-        $j = $d / 3600;
-        $sh = $d - $j * 3600;
-        $m = $sh / 60;
-        $d = $sh - $m * 60;
 
-        echo "$j jam";
-        echo "$m menit";
-        echo "$d detik";
+        echo "$jam jam $menit menit $detik detik";
     }
